@@ -1,0 +1,14 @@
+#card{
+    width: 20rem;
+    height: 20rem;
+
+}
+
+img{
+    height: 100%;
+}
+
+.card-title{
+    text-align: center;
+    background-color: black;
+}

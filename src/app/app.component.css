@@ -1,0 +1,52 @@
+.menu{
+    width: 100;
+    display:flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: rgb(148, 55, 138);
+}
+
+.menu button{
+    color: antiquewhite;
+}
+
+header img{
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 100px;
+    width: 100px;
+}
+
+header .logo{
+    font-weight: bold;
+}
+
+.logo{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.logo input{
+    margin-top: 20px;
+    height: 60px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.logo button{
+    margin-top: 20px;
+    height: 60px;
+    width: 150px;
+    margin-right: 30px;
+    border-radius: 10px;
+    color:antiquewhite;
+    background-color: rgb(148, 55, 138);
+    border: none;
+}
+
+.logo button:hover{
+    background-color: rgb(148, 55, 180);
+}

@@ -1,0 +1,47 @@
+
+img{
+    width: 100%;
+}
+
+.product-card{
+    display: flex;
+    padding: 1rem;
+}
+
+h3{
+    text-align: center;
+}
+
+.product-info{
+    padding: 1rem;
+}
+
+h2{
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    background-color: rgba(179, 19, 219, 0.911);
+    border-radius: 0.5rem;
+    border: solid;
+    border-color: rgb(156, 66, 168);
+    border-width: 0.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+button{
+    margin-top: 20px;
+    height: 60px;
+    width: 150px;
+    margin-right: 30px;
+    border-radius: 10px;
+    color:antiquewhite;
+    background-color: rgb(148, 55, 138);
+    border: none;
+}
+.compra{
+    width: 100%;
+    justify-content: right;
+    display: flex;
+}

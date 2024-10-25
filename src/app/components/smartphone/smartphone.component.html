@@ -1,0 +1,14 @@
+<h2>Smartphones</h2>
+<div *ngFor="let smartphone of smart" class="product-card">
+  <img [src]="smartphone.image" alt="{{ smartphone.title }}">
+  <div class="product-info">
+      <h3>{{ smartphone.title }}</h3>
+      <p>{{ smartphone.description }}</p>
+      <p>{{smartphone.marca}}</p>
+      <h5>{{ smartphone.price | currency }}</h5>
+      <div class="compra">
+        <button>Comprar</button>
+      </div>
+
+  </div>
+</div>

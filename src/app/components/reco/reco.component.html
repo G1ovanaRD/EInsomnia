@@ -1,0 +1,17 @@
+<div class="popu">   
+    <div class="card-popu">
+        <div class="card">
+            <img [src]="product.image" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">{{product.title}}</p>
+              <p><strong>Price:</strong> {{ product.price | currency }}</p>
+                
+            <div class="container d-flex">
+                <!-- Rating Stars -->
+                <div class="stars" [style]="{ '--rating': product.rating.rate }"></div>
+                <pre><b>({{ product.rating.rate }})</b></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

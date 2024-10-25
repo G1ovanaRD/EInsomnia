@@ -1,0 +1,45 @@
+
+.popu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .card-popu{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card{
+    width: 20rem;
+    height: 25rem;
+    margin:0.1rem;
+  }
+img{
+    height: 50%;
+}
+
+.stars {
+    --rating: 3.5; /* Valor por defecto */
+    --star-size: 24px; /* Tamaño de las estrellas */
+    --star-color: #f1c40f; /* Color de las estrellas (amarillo) */
+    --star-background: #e0e0e0; /* Color de fondo para estrellas no llenas */
+  
+    display: inline-block;
+    font-size: var(--star-size);
+    font-family: Times; /* La fuente para las estrellas */
+    line-height: 1;
+    position: relative;
+    color: var(--star-background);
+  }
+  
+  .stars::before {
+    content: "★★★★★"; /* Estrellas de fondo */
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--star-color) calc(var(--rating) / 5 * 100%), var(--star-background) calc(var(--rating) / 5 * 100%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  

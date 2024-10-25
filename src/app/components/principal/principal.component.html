@@ -1,0 +1,15 @@
+<div class="trend">
+    <p class="text">Marcas en Tendencia</p>
+    <app-trend  *ngFor="let product of trend" [product]="product"></app-trend>
+</div>
+<div class="popu-container">
+    <p class="text">Productos Populares</p>
+    <img class="imgpo" src="https://img.gkbcdn.com/s3/bn/2405/tronsmart-663d779f2b40c9659427928e.jpg" alt="...">
+
+    <app-popu *ngFor="let product of popu" [product]="product"></app-popu>
+
+</div>
+<div class="reco-container">
+    <p class="text">Recomendados</p>
+    <app-reco *ngFor="let product of products"[product]="product"></app-reco>
+</div>

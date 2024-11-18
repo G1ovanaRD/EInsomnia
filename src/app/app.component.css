@@ -50,3 +50,12 @@ header .logo{
 .logo button:hover{
     background-color: rgb(148, 55, 180);
 }
+
+.custom-menu button{
+    background-color: rgb(148, 55, 138);
+}
+
+mat-menu-content{
+    background-color: aqua;
+}
+  

@@ -1,0 +1,20 @@
+<h2>{{ productos.length ? productos[0].type : 'Productos' }}</h2>
+<div class="popu" >   
+
+    <div *ngFor="let producto of productos" class="product-card" class="card-popu">
+        <div class="card" [routerLink]="['/producto', producto.id]">
+            <img [src]="producto.image" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">{{producto.title}}</p>
+              <p><strong>Price:</strong> {{ producto.price | currency }}</p>
+                
+            <div class="container d-flex">
+                <!-- Rating Stars -->
+                <div class="stars" [style]="{ '--rating': producto.rating.rate }"></div>
+                <pre><b>({{ producto.rating.rate }})</b></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+

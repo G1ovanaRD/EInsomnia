@@ -1,5 +1,17 @@
-
-  .popu{
+h2{
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    background-color: rgba(179, 19, 219, 0.911);
+    border-radius: 0.5rem;
+    border: solid;
+    border-color: rgb(156, 66, 168);
+    border-width: 0.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.popu{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -14,7 +26,7 @@
 
   .card{
     width: 20rem;
-    height: 30rem;
+    height: 25rem;
     margin:0.1rem;
   }
 img{

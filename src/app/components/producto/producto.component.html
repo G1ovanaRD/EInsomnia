@@ -1,0 +1,12 @@
+<h2>{{ producto ? producto.title : 'Producto no encontrado' }}</h2>
+<div *ngIf="producto" class="product-card">
+  <img [src]="producto.image" alt="{{ producto.title }}">
+  <div class="product-info">
+    <p>{{ producto.description }}</p>
+    <p>{{ producto.marca }}</p>
+    <h5>{{ producto.price | currency }}</h5>
+    <div class="compra">
+      <button>Comprar</button>
+    </div>
+  </div>
+</div>

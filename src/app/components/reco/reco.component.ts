@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../interface/producto.interface';
 import { CommonModule, NgFor } from '@angular/common';
+import { RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-reco',
   standalone: true,
-  imports: [CommonModule,NgFor],
+  imports: [CommonModule,NgFor,RouterLink],
   templateUrl: './reco.component.html',
   styleUrl: './reco.component.css'
 })

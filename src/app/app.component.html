@@ -3,7 +3,7 @@
     <img src="https://pbs.twimg.com/media/GaclMSbWEAAh6wl?format=jpg&name=small" class="logo" [routerLink]="['']" routerLinkActive="menu-item-selected">
     <input type="text" id="searchInput" placeholder="Buscar...">
     <a href=""><img style="width: 30px; height: 30px; margin-top: 40px;" src="https://cdn-icons-png.flaticon.com/512/107/107122.png"></a> 
-    <button>Iniciar sesion</button>
+    <button [routerLink]="['/cuenta']" routerLinkActive="menu-item-selected">Iniciar sesion</button>
     <button>Mi carrito</button>
   </div>
   <div class="menu">
@@ -20,50 +20,50 @@
     <!-- Menú de TV & Video -->
     <button mat-button [matMenuTriggerFor]="belowMenu">TV & VIDEO</button>
     <mat-menu #belowMenu="matMenu" yPosition="below">
-      <button mat-menu-item>Televisores</button>
-      <button mat-menu-item>Proyectores</button>
-      <button mat-menu-item>DVD</button>
-      <button mat-menu-item>Control</button>
+      <button mat-menu-item [routerLink]="['/productos', 'Television']" routerLinkActive="menu-item-selected">Televisores</button>
+      <button mat-menu-item [routerLink]="['/productos', 'Proyector']" routerLinkActive="menu-item-selected">Proyectores</button>
+      <button mat-menu-item [routerLink]="['/productos', 'DVD']" routerLinkActive="menu-item-selected">DVD</button>
+      <button mat-menu-item [routerLink]="['/productos', 'Control']" routerLinkActive="menu-item-selected">Control</button>
     </mat-menu>
 
     <!-- Menú de Audio -->
     <button mat-button [matMenuTriggerFor]="beforeMenu">AUDIO</button>
     <mat-menu #beforeMenu="matMenu" xPosition="before">
-      <button mat-menu-item>Bocinas</button>
-      <button mat-menu-item>Audifonos</button>
-      <button mat-menu-item>Microfonos</button>
-      <button mat-menu-item>Accesorios</button>
+      <button mat-menu-item [routerLink]="['/productos', 'Bocinas']" routerLinkActive="menu-item-selected">Bocinas</button>
+      <button mat-menu-item [routerLink]="['/productos', 'Audifonos']" routerLinkActive="menu-item-selected">Audifonos</button>
+      <button mat-menu-item [routerLink]="['/productos', 'Microfonos']" routerLinkActive="menu-item-selected">Microfonos</button>
+      <button mat-menu-item [routerLink]="['/productos', 'Accesorios']" routerLinkActive="menu-item-selected">Accesorios</button>
     </mat-menu>
 
     <!-- Menú de Computadoras -->
     <button mat-button [matMenuTriggerFor]="afterMenu">COMPUTADORAS</button>
     <mat-menu #afterMenu="matMenu" xPosition="after">
-      <button mat-menu-item>Laptop</button>
-      <button mat-menu-item>PC</button>
-      <button mat-menu-item>Monitores</button>
-      <button mat-menu-item>Teclado</button>
-      <button mat-menu-item>Accesorios</button>
+      <button mat-menu-item [routerLink]="['/productos', 'Laptop']" routerLinkActive="menu-item-selected">Laptop</button>
+      <button mat-menu-item [routerLink]="['/productos', 'PC']" routerLinkActive="menu-item-selected">PC</button>
+      <button mat-menu-item [routerLink]="['/productos', 'Monitores']" routerLinkActive="menu-item-selected">Monitores</button>
+      <button mat-menu-item [routerLink]="['/productos', 'Teclado']" routerLinkActive="menu-item-selected">Teclado</button>
+      <button mat-menu-item [routerLink]="['/productos', 'Accesorios']" routerLinkActive="menu-item-selected">Accesorios</button>
     </mat-menu>
 
     <!-- Menú de Electrodomésticos -->
     <button mat-button [matMenuTriggerFor]="electroMenu">ELECTRODOMÉSTICOS</button>
     <mat-menu #electroMenu="matMenu" yPosition="above">
-      <button mat-menu-item>Refrigerador</button>
-      <button mat-menu-item>Microondas</button>
-      <button mat-menu-item>Robot Aspiradora</button>
+      <button mat-menu-item [routerLink]="['/productos', 'Refrigerador']" routerLinkActive="menu-item-selected">Refrigerador</button>
+      <button mat-menu-item [routerLink]="['/productos', 'Microondas']" routerLinkActive="menu-item-selected">Microondas</button>
+      <button mat-menu-item [routerLink]="['/productos', 'RobotAspiradora']" routerLinkActive="menu-item-selected">Robot Aspiradora</button>
     </mat-menu>
 
     <!-- Menú de Marca -->
     <button mat-button [matMenuTriggerFor]="marcaMenu">MARCA</button>
     <mat-menu #marcaMenu="matMenu" yPosition="above">
-      <button mat-menu-item>Samsung</button>
-      <button mat-menu-item>Apple</button>
-      <button mat-menu-item>Xiaomi</button>
-      <button mat-menu-item>LG</button>
-      <button mat-menu-item>Mabe</button>
-      <button mat-menu-item>HP</button>
-      <button mat-menu-item>LENOVO</button>
-      <button mat-menu-item>STEREN</button>
+      <button mat-menu-item [routerLink]="['/prodMar', 'Samsung']" routerLinkActive="menu-item-selected">Samsung</button>
+      <button mat-menu-item [routerLink]="['/prodMar', 'Apple']" routerLinkActive="menu-item-selected">Apple</button>
+      <button mat-menu-item [routerLink]="['/prodMar', 'Xiaomi']" routerLinkActive="menu-item-selected">Xiaomi</button>
+      <button mat-menu-item [routerLink]="['/prodMar', 'LG']" routerLinkActive="menu-item-selected">LG</button>
+      <button mat-menu-item [routerLink]="['/prodMar', 'Mabe']" routerLinkActive="menu-item-selected">Mabe</button>
+      <button mat-menu-item [routerLink]="['/prodMar', 'HP']" routerLinkActive="menu-item-selected">HP</button>
+      <button mat-menu-item [routerLink]="['/prodMar', 'Lenovo']" routerLinkActive="menu-item-selected">LENOVO</button>
+      <button mat-menu-item [routerLink]="['/prodMar', 'Steren']" routerLinkActive="menu-item-selected">STEREN</button>
     </mat-menu>
   </div>
   <!-- <div class="row">

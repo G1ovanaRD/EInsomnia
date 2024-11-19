@@ -28,11 +28,19 @@ export class ListProductComponent implements OnInit{
     // Suscribirse a los cambios en el parámetro de ruta
     this.subscription = this.route.paramMap.subscribe(params => {
       const tipo = params.get('tipo');
+      const marca = params.get('marca');
       if (tipo) {
         this.productos = this.productService.products.filter(
           product => product.type === tipo
         );
+      }else if(marca){
+        this.productos = this.productService.products.filter(
+          product=>product.marca==marca
+        );
       }
+
+
+
     });
   }
 

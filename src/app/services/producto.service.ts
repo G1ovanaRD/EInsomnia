@@ -86,7 +86,7 @@ export class ProductoService {
         "price": 4716.00,
         "description": "6 menús de autococción que te permiten calentar o cocinar personalizando el tiempo. Función Grill, te permite gratinar y dorar tus platillos. 10 niveles de potencia que te permiten cocinar una gran variedad de alimentos",
         "category": "Electrodomésticos",
-        "type": "Microondaas",
+        "type": "Microondas",
         "image": "https://m.media-amazon.com/images/I/61EOQbMcJtL._AC_SL1000_.jpg",
         "marca":"Mabe",
         "rating": {

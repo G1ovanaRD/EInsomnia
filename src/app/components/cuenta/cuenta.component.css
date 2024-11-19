@@ -1,0 +1,82 @@
+.perfil{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   margin-top: 2rem;
+}
+
+.contenido{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.my-svg{
+    width: 18%;
+    color:  rgb(148, 55, 138);
+}
+
+h3{
+    display: block;
+}
+
+.wish{
+    width: 35%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid rgb(0, 0, 0);
+    border-radius: 2rem;
+    border-width: 1px;
+    margin: 2rem;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.orden{
+    width: 35%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid rgb(0, 0, 0);
+    border-radius: 2rem;
+    border-width: 1px;
+    margin: 2rem;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.my-svg-wish{
+    width: 45%;
+    height: auto;
+    color: #960018;
+}
+
+.my-svg-buy{
+    width: 45%;
+    height: auto;
+    color: #801a42;
+}
+.textW{
+    font-size:2rem;
+    color: white;
+    background-color: #960018;
+    width: 80%;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+.textP{
+    font-size:2rem;
+    color: white;
+    background-color:#801a42;
+    width: 80%;
+    text-align: center;
+    border-radius: 0.5rem;
+}

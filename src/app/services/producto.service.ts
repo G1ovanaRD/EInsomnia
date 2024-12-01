@@ -166,8 +166,56 @@ export class ProductoService {
     }
 
 ];
+
+
   public get products(): Product[]{
     return this._products;
+  }
+
+  ifFormSubmitted:boolean=false;
+
+  private _selectedProduct: Product | undefined;
+  private _isEditing = false;
+
+
+  ///metodo para eliminar un elemento,se pasa el nombre del elemnto y se hace un filtro y se agregan a la pantalla todos menos ese
+  deleteElement(title: string): void {
+    this._products = this._products.filter(product => product.title !== title);  // Eliminar producto
+    this._notifyChange();               // Notificar cambio
+  }
+
+
+get selectedProduct(): Product | undefined {
+  return this._selectedProduct;
+}
+
+get isEditing(): boolean {
+  return this._isEditing;
+}
+
+createElement(product: Product): void {
+  this._products.push(product);  // Agregar producto
+  this._notifyChange();          // Notificar cambio
+}
+
+
+updateElement(product: Product): void {
+  const index = this._products.findIndex(p => p.id === product.id);
+  if (index !== -1) {
+    this._products[index] = product;  // Actualizar producto
+    this._notifyChange();             // Notificar cambio
+  }
+}
+
+
+ selectProductForEdit(product: Product): void {
+    this._selectedProduct = product;
+    this._isEditing = true;
+  }
+
+  private _notifyChange() {
+    // Aquí puedes implementar un Subject o simplemente asegúrate de que Angular maneje la actualización del estado
+    // si estás utilizando un servicio simple.
   }
 
 }

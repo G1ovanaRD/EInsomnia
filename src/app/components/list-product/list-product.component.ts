@@ -1,21 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Product } from '../interface/producto.interface';
 import { ProductoService } from '../../services/producto.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, NgForm } from '@angular/forms';
+import { ProductFormComponent } from '../product-form/product-form.component';
 
 @Component({
   selector: 'app-list-product',
   standalone: true,
-  imports: [CommonModule,RouterLink],
+  imports: [CommonModule,RouterLink,FormsModule,ProductFormComponent],
   templateUrl: './list-product.component.html',
   styleUrl: './list-product.component.css'
 })
-export class ListProductComponent implements OnInit{
+
+export class ListProductComponent{
+     //compoentne hijo envia informacion al componente padre
+     @Output() //deleteCard emisor informacion, <que tipo de evento se va a comnicar ne el evento>
+     public deleteCard: EventEmitter<string>=new EventEmitter();
+   
+     //compartir show al otro form
+     @Output()
+     public editCard: EventEmitter<Product> = new EventEmitter();
+  
   public productos: Product[] = [];
   private subscription: Subscription | null = null;
+
+  @Input()
+    public product : Product={
+      id:0,
+      title: "",
+      price: 0,
+      description:"",
+      image: "",
+      category:"",
+      marca:"",
+      type:"",
+      rating:{
+        rate:0,
+        count:0
+      }
+  }
 
   constructor(
     private route: ActivatedRoute,
@@ -23,29 +50,25 @@ export class ListProductComponent implements OnInit{
   ) {}
 
 
+  public get products(): Product[]{
+    return this.productService.products;
+  }
+  
 
-  ngOnInit(): void {
-    // Suscribirse a los cambios en el parámetro de ruta
-    this.subscription = this.route.paramMap.subscribe(params => {
-      const tipo = params.get('tipo');
-      const marca = params.get('marca');
-      if (tipo) {
-        this.productos = this.productService.products.filter(
-          product => product.type === tipo
-        );
-      }else if(marca){
-        this.productos = this.productService.products.filter(
-          product=>product.marca==marca
-        );
-      }
+  public isSelect:boolean=false;
 
+  public changeSelected():void{
+  this.isSelect =!this.isSelect;
 
-
-    });
   }
 
-  ngOnDestroy(): void {
-    // Cancelar la suscripción cuando el componente se destruye
-    this.subscription?.unsubscribe();
+  public onDeleteCard(){
+    //console.log("Evento desde el hijo");
+    this.deleteCard.emit(this.product.title);
   }
+
+  public onEditCard(): void {
+    this.editCard.emit(this.product); 
+  }
+
 }

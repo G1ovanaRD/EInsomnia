@@ -1,1 +1,17 @@
-<p>CARRO LIST</p>
+<p class="text">Wishlist</p>
+<div class="car-container">
+   
+    <div class="lista">
+        <app-car *ngFor="let product of products" [product]="product" (productSelected)="onProductSelected($event)"> </app-car>
+    </div>
+
+    <div class="resumen">
+        <h1>Resumen</h1>
+        <h2>Subtotal :  MX$ {{ subtotal.toFixed(2) }}</h2>
+        <h2>Gastos de envío :   MX$50.00</h2>
+        <h2>Ahorrado:   -MX$0.1</h2>
+        <b><h2>Total estimado: MX$ {{ (subtotal + 50 - 0.10).toFixed(2) }}</h2></b>
+        <button [disabled]="subtotal === 0">Pagar </button>
+
+    </div>
+</div>

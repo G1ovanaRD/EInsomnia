@@ -1,0 +1,12 @@
+<h2>{{ products.length ? products[0].type : 'Productos' }}</h2>
+<app-list-product *ngFor="let producto of products" [product]="producto" class="product-card card-popu" (deleteCard)="deleteElement($event)" (editCard)="selectShowForEdit($event)"></app-list-product>
+<div>
+    <h2>Producto</h2>
+    <app-product-form
+      (createElement)="createElement($event)"
+      (updateElement)="updateElement($event)"
+      [product]="selectedProduct"
+      [isEdit]="isEditing">
+    </app-product-form>
+  </div>
+

@@ -24,7 +24,7 @@ export class PrincipalComponent implements OnInit {
   ngOnInit(): void {
     // Filtra los productos con los IDs que deseas mostrar
     this.popu = this.productService.products.filter(product =>
-      [2, 3, 4].includes(product.id)
+      [2, 3, 4,6].includes(product.id)
     );
     
     this.trend=this.productService.products.filter(product=>["LG","Mabe","HP"].includes(product.marca));

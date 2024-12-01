@@ -1,0 +1,39 @@
+.container{
+    display: flex;
+    border-bottom: solid gray 1px;
+    padding: 5px;
+    align-items: center;
+}
+
+.imagen{
+    
+    
+}
+.imagen img{
+    width: 150px;
+    height: 150px;
+    border-radius: 0.5rem;
+    border: solid black;
+
+}
+
+.contenido{
+    height: auto;
+    padding: 3px;
+} 
+
+.selector {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer; /* Muestra un puntero al pasar sobre el checkbox */
+    margin: 0 10px;
+    appearance: none; /* Elimina el estilo predeterminado del navegador */
+    border: 2px solid #333; /* Borde del checkbox */
+    border-radius: 50%;
+    outline: none;
+}
+
+.selector:checked {
+    background-color: rgb(148, 55, 138);
+   
+}

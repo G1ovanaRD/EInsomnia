@@ -1,0 +1,33 @@
+input {
+    height: 60px;
+    width: 700px;
+    overflow-y: auto;  /* Permite desplazamiento vertical */
+    word-wrap: break-word; /* Permite que el texto largo se divida en varias líneas */
+    white-space: pre-wrap; /* Permite saltos de línea dentro del campo de texto */
+  }
+  
+  .forms {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra el formulario verticalmente */
+    height: 100%; /* Altura completa de la ventana */
+    width: 100%;
+  }
+  
+  form {
+    width: 100%;
+    max-width: 800px; /* Limita el ancho del formulario */
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo para mejor visibilidad */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  div {
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    width: 100%; /* Para que el botón ocupe el ancho completo */
+  }
+  

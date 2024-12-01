@@ -1,1 +1,11 @@
-<p>car works!</p>
+<div class="container">
+    <input type="checkbox" class="selector" (change)="onSelectProduct($event)">
+    <div class="imagen">
+        <img [src]="product.image" alt="">
+    </div>
+    <div class="contenido">
+        <b><p>{{product.title}}</p></b>
+        <p>{{product.description}}</p>
+        <b>Precio : {{product.price | currency}} </b>
+    </div>
+</div>

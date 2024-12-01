@@ -55,3 +55,14 @@ img{
     -webkit-text-fill-color: transparent;
   }
   
+  .buttons{
+    display: flex;
+    justify-content: space-around;
+  }
+  .buttons button{
+    width: 70px;
+   background-color:  rgb(148, 55, 138);
+   color: antiquewhite;
+   border: none;
+   border-radius: 8px;
+  }

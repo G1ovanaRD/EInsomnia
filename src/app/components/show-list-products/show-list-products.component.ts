@@ -19,6 +19,7 @@ export class ShowListProductsComponent {
 
   ifFormSubmitted:boolean=false;  
   tipoProducto: string = '';
+  marca:string='';
 
 
 
@@ -49,6 +50,8 @@ public get products(): Product[] {
     if (this.tipoProducto) {
       // Filtramos los productos por tipo
       return this.productService.products.filter(product => product.type === this.tipoProducto);
+    }else if(this.marca){
+      return this.productService.products.filter(product => product.marca === this.marca);
     }
     return this.productService.products; // Si no hay filtro, mostramos todos los productos
   }
@@ -72,7 +75,8 @@ public selectShowForEdit(product: Product): void {
 
 ngOnInit(): void {
   this.route.paramMap.subscribe(params => {
-    this.tipoProducto = params.get('tipo') || ''; // Captura el parámetro `tipo` de la URL
+    this.tipoProducto = params.get('tipo') || ''; 
+    this.marca = params.get('marca') || '';
   });
 }
 

@@ -33,11 +33,19 @@ export class AppComponent {
     private router: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    this.productoService.fetchProducts(); // Recargar todos los productos
+  }
 
-  onSearch(): void {
-    // Llama a tu servicio de búsqueda
-    this.productoService.searchProducts(this.searchTerm);
+  onSearch(event: Event): void {
+    event.preventDefault(); // Prevenir la navegación por defecto del enlace
+    if (this.searchTerm.trim()) {
+      this.productoService.searchProducts(this.searchTerm); // Ejecutar la búsqueda
+      this.router.navigate(['/search']); // Navegar manualmente a la página de resultados
+      this.searchTerm = ''; // Vaciar el campo de búsqueda
+    } else {
+      this.productoService.fetchProducts(); // Si no hay término de búsqueda, cargar todos los productos
+    }
   }
 
 }

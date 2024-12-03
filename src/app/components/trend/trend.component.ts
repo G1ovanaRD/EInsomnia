@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../interface/producto.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-trend',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './trend.component.html',
   styleUrl: './trend.component.css'
 })

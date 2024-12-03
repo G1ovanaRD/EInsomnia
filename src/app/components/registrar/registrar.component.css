@@ -1,0 +1,72 @@
+button{
+    margin-top: 20px;
+    height: 60px;
+    width: 150px;
+    border-radius: 10px;
+    color:antiquewhite;
+    background-color: rgb(148, 55, 138);
+    border: none;
+}
+
+button:hover{
+    background-color: rgb(148, 55, 180);
+}
+
+custom button{
+    background-color: rgb(148, 55, 138);
+}
+
+input{
+    width: 100%;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+form {
+    width: 700px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: solid; 
+    border-color: rgb(156, 66, 168);
+    border-width: 1px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
+    
+}
+
+h1{
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    background-color: rgba(179, 19, 219, 0.911);
+    border-radius: 0.5rem;
+    border: solid;
+    border-color: rgb(156, 66, 168);
+    border-width: 0.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ini{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}

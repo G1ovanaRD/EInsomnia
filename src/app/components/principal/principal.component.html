@@ -1,6 +1,8 @@
 <div class="trend">
     <p class="text">Marcas en Tendencia</p>
-    <app-trend  *ngFor="let product of trend" [product]="product"></app-trend>
+    <div class="trendU">
+        <app-trend  *ngFor="let product of trend" [product]="product"></app-trend>
+    </div>
 </div>
 <div class="popu-container">
     <p class="text">Productos Populares</p>

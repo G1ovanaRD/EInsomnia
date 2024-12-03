@@ -1,7 +1,7 @@
 #card{
     width: 20rem;
     height: 20rem;
-
+    cursor: pointer;
 }
 
 img{
@@ -10,5 +10,6 @@ img{
 
 .card-title{
     text-align: center;
-    background-color: black;
+    background-color:rgb(148, 55, 138);
+    border-radius: 10px;
 }

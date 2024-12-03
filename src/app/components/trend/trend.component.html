@@ -1,8 +1,8 @@
 <div class="trend-container">
-<div class="card text-bg-dark" id="card">
+<div class="card text-bg-dark" id="card" [routerLink]="['/prodMar', product.marca]" >
     <img [src]="product.image" class="card-img" alt="...">
     <div class="card-img-overlay">
-      <h5 class="card-title">{{product.marca}}</h5>
+      <h3 class="card-title">{{product.marca}}</h3>
     </div>
   </div>
 </div>

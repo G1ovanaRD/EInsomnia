@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { ProductoService } from '../../services/producto.service';
 import { Product } from '../interface/producto.interface';
-import { Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+
 @Component({
-  selector: 'app-wish',
+  selector: 'app-order-detail',
   standalone: true,
   imports: [CommonModule,RouterLink],
-  templateUrl: './wish.component.html',
-  styleUrl: './wish.component.css'
+  templateUrl: './order-detail.component.html',
+  styleUrl: './order-detail.component.css'
 })
-export class WishComponent {
+export class OrderDetailComponent {
   @Input()
     public product : Product={
       _id:"",

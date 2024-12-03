@@ -28,7 +28,7 @@ export class CarListComponent {
     if (selected) {
       this.selectedProducts.push(product);
     } else {
-      this.selectedProducts = this.selectedProducts.filter(p => p.id !== product.id);
+      this.selectedProducts = this.selectedProducts.filter(p => p._id !== product._id);
     }
 
     this.calculateSubtotal();

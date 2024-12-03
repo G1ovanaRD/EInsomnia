@@ -13,7 +13,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class PopuComponent {
   @Input()
   public product : Product={
-    id:0,
+    _id:"",
     title: "",
     price: 0,
     description:"",

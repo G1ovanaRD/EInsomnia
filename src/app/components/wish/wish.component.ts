@@ -11,7 +11,7 @@ import { Input } from '@angular/core';
 export class WishComponent {
   @Input()
     public product : Product={
-      id:0,
+      _id:"",
       title: "",
       price: 0,
       description:"",

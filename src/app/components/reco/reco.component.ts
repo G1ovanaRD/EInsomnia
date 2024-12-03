@@ -13,7 +13,7 @@ import { RouterLink} from '@angular/router';
 export class RecoComponent {
 @Input()
 public product : Product={
-  id:0,
+  _id:"",
   title: "",
   price: 0,
   description:"",

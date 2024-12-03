@@ -14,7 +14,7 @@ import { ShowListProductsComponent } from './components/show-list-products/show-
 export const routes: Routes = [
     { path: '', component: PrincipalComponent}, // Página principal
     { path: 'smartphones', component: SmartphoneComponent }, // Página para smartphones
-    { path: 'producto/:id', component: ProductoComponent },
+    { path: 'producto/:_id', component: ProductoComponent },
     { path: 'cuenta', component: CuentaComponent },
     { path: 'productos/:tipo', component: ShowListProductsComponent},
     { path: 'prodMar/:marca', component: ListProductComponent },

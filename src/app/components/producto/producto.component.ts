@@ -23,11 +23,11 @@ export class ProductoComponent implements OnInit {
 
   ngOnInit(): void {
     this.subscription = this.route.paramMap.subscribe(params => {
-      const id = params.get('id');
-      if (id) {
+      const _id = params.get('_id');
+      if (_id) {
         // Encuentra el producto por ID en lugar de filtrar
         this.producto = this.productService.products.find(
-          product => product.id === Number(id)
+          product => product._id === String(_id)
         ) || null;
       }
     });

@@ -20,9 +20,20 @@ export class ShowListProductsComponent {
   ifFormSubmitted:boolean=false;  
   tipoProducto: string = '';
 
+
+
+  constructor() {
+    // this.form = new FormGroup({
+    //   name: new FormControl("", [Validators.required]),
+    //   description: new FormControl("", [Validators.required]),
+    //   image: new FormControl("", [Validators.required])
+    // });
+    this.productService.fetchProducts();
+  }
+
   ///metodo para eliminar un elemento,se pasa el nombre del elemnto y se hace un filtro y se agregan a la pantalla todos menos ese
-  public deleteElement(title:string):void{
-    this.productService.deleteElement(title);
+  public deleteElement(id :string):void{
+    this.productService.deleteElement(id);
   
     //console.log("Evento desde padre");
   }

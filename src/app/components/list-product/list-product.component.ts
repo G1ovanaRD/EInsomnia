@@ -30,7 +30,7 @@ export class ListProductComponent{
 
   @Input()
     public product : Product={
-      id:0,
+      _id:"",
       title: "",
       price: 0,
       description:"",
@@ -64,7 +64,7 @@ export class ListProductComponent{
 
   public onDeleteCard(){
     //console.log("Evento desde el hijo");
-    this.deleteCard.emit(this.product.title);
+    this.deleteCard.emit(this.product._id);
   }
 
   public onEditCard(): void {

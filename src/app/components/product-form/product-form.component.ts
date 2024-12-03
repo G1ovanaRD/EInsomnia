@@ -20,7 +20,7 @@ export class ProductFormComponent {
   public onFormSubmit(form: NgForm): void {
     if (form.valid) {
       const updatedProduct: Product = {
-        id: this.product?.id || 0,  // Para asegurarse de mantener el ID si estamos editando
+        _id: this.product?._id || "",  // Para asegurarse de mantener el ID si estamos editando
         title: form.value.name,
         description: form.value.description,
         image: form.value.image,

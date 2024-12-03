@@ -11,7 +11,7 @@ import { Product } from '../interface/producto.interface';
 export class TrendComponent {
   @Input()
   public product : Product={
-    id:0,
+    _id:"",
     title: "",
     price: 0,
     description:"",

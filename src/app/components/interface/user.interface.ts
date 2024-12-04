@@ -6,7 +6,7 @@ export interface User{
     password:string,
     image: string,
     role: string,
-    whislist:Product[],
-    carrito: Product[],
-    pedido: Product[]
+    whislist:string[],
+    carrito: string[],
+    pedido: string[]
 }

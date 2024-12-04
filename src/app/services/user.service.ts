@@ -9,28 +9,20 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  private apiUrl = "http://localhost:8080/api/";
+  private apiUrl = "http://localhost:8080/api/user";
 
+    // Agregar un producto al carrito
+    addToCart(userId: string, productId: string): Observable<any> {
+      return this.http.post(`${this.apiUrl}/${userId}/carrito`, {productId});
+    }
+  
+    addToWishList(userId: string, productId: string): Observable<any> {
+      return this.http.post(`${this.apiUrl}/${userId}/wishlist`, {productId});
+    }
+  
+    // Obtener los productos en el carrito de un usuario
+     getCarrito(userId: string): Observable<Product[]> {
+       return this.http.get<Product[]>(`${this.apiUrl}/${userId}/cart`);
+     }
 
-  addToWishlist(productId: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/user/wishlist/add/${productId}`, {});
-  }
-
-  // Eliminar producto del wishlist
-  removeFromWishlist(productId: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/user/wishlist/remove/${productId}`);
-  }
-
-  addToCart(userId: string, productId: string): Observable<void> {
-    return this.http.post<void>(`${this.apiUrl}/${userId}/cart`, { productId });
-  }
-  // Eliminar producto del carrito
-  removeFromCart(productId: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/user/cart/remove/${productId}`);
-  }
-
-  // Obtener los productos en el carrito
-  getCartItems(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}/user/cart`);
-  }
 }

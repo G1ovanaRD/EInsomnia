@@ -29,9 +29,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private router: Router
-  ) {
-    this.checkToken();
-  }
+  ){} 
 
   login(username: string, password: string): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.apiUrl}/login`, { username, password })
@@ -39,6 +37,8 @@ export class AuthService {
         tap(response => {
           localStorage.setItem('token', response.token);
           this.userSubject.next(response.user);
+          localStorage.setItem('id', response.user._id);
+          localStorage.setItem('role', response.user.role);
         })
       );
   }
@@ -49,6 +49,10 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('token');
+    localStorage.removeItem('id');
+    localStorage.removeItem('role');
+    localStorage.removeItem('username');
+    
     this.userSubject.next(null);
     this.router.navigate(['']);
   }
@@ -57,21 +61,7 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  private checkToken(): void {
-    const token = this.getToken();
-    if (token) {
-      // You might want to validate the token with the backend here
-      // For now, we'll just set the user from the stored data
-      try {
-        const userData = JSON.parse(atob(token.split('.')[1]));
-        this.http.get<User>(`${this.apiUrl}/users/${userData.username}`).subscribe(
-          user => this.userSubject.next(user)
-        );
-      } catch (e) {
-        this.logout();
-      }
-    }
-  }
+
 
   isLoggedIn(): boolean {
     return !!this.getToken();

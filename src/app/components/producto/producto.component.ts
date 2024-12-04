@@ -18,7 +18,11 @@ export class ProductoComponent implements OnInit {
   public producto: Product | null = null;
   product!: Product;
   private subscription: Subscription | null = null;
-  userId = '674c000d33079de2ec8a3e39';
+  userId: string| null = null;
+  token: string | null = null;
+  userRole: string | null = null;
+  
+  
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +31,9 @@ export class ProductoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.token = localStorage.getItem('token');
+    this.userId = localStorage.getItem('id');
+    this.userRole = localStorage.getItem('role');
     this.subscription = this.route.paramMap.subscribe(params => {
       const _id = params.get('_id');
       if (_id) {
@@ -44,8 +51,8 @@ export class ProductoComponent implements OnInit {
   }
 
  // producto.component.ts
-addToCart(): void {
-  if (this.producto) {
+ addToCart(): void {
+  if (this.producto && this.userId) {  // Verifica que userId no sea null
     this.userService.addToCart(this.userId, this.producto._id).subscribe({
       next: (response) => {
         console.log("Producto agregado al carrito:", response);
@@ -55,6 +62,24 @@ addToCart(): void {
         console.error("Error al agregar al carrito:", err);
       }
     });
+  } else {
+    console.error('No se puede agregar al carrito, el userId o el producto no están disponibles');
+  }
+}
+
+addToWishList(): void {
+  if (this.producto && this.userId) {  // Verifica que userId no sea null
+    this.userService.addToWishList(this.userId, this.producto._id).subscribe({
+      next: (response) => {
+        console.log("Producto agregado a la Wishlist:", response);
+        // Opcional: Mostrar un mensaje al usuario
+      },
+      error: (err) => {
+        console.error("Error al agregar a la wishlist:", err);
+      }
+    });
+  } else {
+    console.error('No se puede agregar a la wishlist, el userId o el producto no están disponibles');
   }
 }
 

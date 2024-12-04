@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../components/interface/producto.interface';
+import { User } from '../components/interface/user.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,8 +22,12 @@ export class UserService {
     }
   
     // Obtener los productos en el carrito de un usuario
-     getCarrito(userId: string): Observable<Product[]> {
-       return this.http.get<Product[]>(`${this.apiUrl}/${userId}/cart`);
-     }
+    getCarrito(userId: string): Observable<string[]> {
+      return this.http.get<string[]>(`${this.apiUrl}/${userId}/cart`);
+    }
+
+     removeFromCart(userId: string, productId: string): Observable<any> {
+      return this.http.delete(`${this.apiUrl}/${userId}/carrito/${productId}`);
+    }
 
 }

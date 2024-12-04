@@ -5,7 +5,8 @@
         <app-car *ngFor="let product of products" [product]="product" (productSelected)="onProductSelected($event)"> </app-car>
     </div> -->
     <div class="lista">
-        <app-prueba *ngFor="let product of products" [product]="product" (productSelected)="onProductSelected($event)" > </app-prueba>
+        <app-prueba *ngFor="let product of products" [product]="product"
+        (eliminarProducto)="eliminarDelCarrito(product._id)"> </app-prueba>
     </div>
     <div class="resumen">
         <h1>Resumen</h1>

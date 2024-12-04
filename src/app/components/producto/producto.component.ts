@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductoService } from '../../services/producto.service';
 import { Product } from '../interface/producto.interface';
 import { CommonModule, NgFor } from '@angular/common';
@@ -9,7 +9,7 @@ import { User } from '../interface/user.interface';
 
 @Component({
   selector: 'app-producto',
-  imports: [NgFor,CommonModule],
+  imports: [NgFor,CommonModule,RouterLink],
   standalone: true,
   templateUrl: './producto.component.html',
   styleUrls: ['./producto.component.css']
@@ -30,6 +30,12 @@ export class ProductoComponent implements OnInit {
     private userService: UserService
   ) {}
 
+@Output()
+public eliminarProducto: EventEmitter<void> = new EventEmitter();
+
+onEliminarProducto(): void {
+  this.eliminarProducto.emit();
+}
   ngOnInit(): void {
     this.token = localStorage.getItem('token');
     this.userId = localStorage.getItem('id');
@@ -83,5 +89,5 @@ addToWishList(): void {
   }
 }
 
-  
+
 }

@@ -1,0 +1,74 @@
+.wish-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid gray 1px;
+    margin-top: 2px;
+    padding: 5px;
+}
+
+.imagen{
+    width: 30%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.contenido{
+    width: 65%;
+    padding: 1rem;
+    cursor: pointer;
+}
+.info{
+    width: 100%;
+   
+}
+
+.imagen img {
+    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+    height: 100%; /* Ajusta la altura proporcionalmente */
+    max-height: 250px;
+}
+
+.botones{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+button{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100px;
+    color: white;
+    background-color: rgb(148, 55, 138);
+    border-radius: 0.5rem;
+    align-items: center;
+    text-align: center;
+}
+.selector {
+    width: 30px;
+    height: 30px;
+    cursor: pointer; /* Muestra un puntero al pasar sobre el checkbox */
+    margin: 0 10px;
+    appearance: none; /* Elimina el estilo predeterminado del navegador */
+    border: 2px solid #333; /* Borde del checkbox */
+    border-radius: 50%;
+    outline: none;
+}
+
+.bi-trash{
+    color:blueviolet;
+    width: 35px;
+    height: auto;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.selector:checked {
+    background-color:blueviolet;
+    border-color: rgb(87, 30, 141);
+   
+}

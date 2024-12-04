@@ -2,12 +2,13 @@ import { Component, inject } from '@angular/core';
 import { CarComponent } from "../car/car.component";
 import { ProductoService } from '../../services/producto.service';
 import { Product } from '../interface/producto.interface';
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
+import { PruebaComponent } from '../prueba/prueba.component';
 
 @Component({
   selector: 'app-car-list',
   standalone: true,
-  imports: [CarComponent,NgFor],
+  imports: [CarComponent, NgFor,PruebaComponent,CommonModule],
   templateUrl: './car-list.component.html',
   styleUrl: './car-list.component.css'
 })

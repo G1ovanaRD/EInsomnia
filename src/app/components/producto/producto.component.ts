@@ -74,11 +74,11 @@ onEliminarProducto(): void {
 }
 
 addToWishList(): void {
-  if (this.producto && this.userId) {  // Verifica que userId no sea null
+  if (this.producto && this.userId) {
     this.userService.addToWishList(this.userId, this.producto._id).subscribe({
       next: (response) => {
         console.log("Producto agregado a la Wishlist:", response);
-        // Opcional: Mostrar un mensaje al usuario
+        // Opcional: Actualizar la lista en el frontend.
       },
       error: (err) => {
         console.error("Error al agregar a la wishlist:", err);
@@ -88,6 +88,7 @@ addToWishList(): void {
     console.error('No se puede agregar a la wishlist, el userId o el producto no están disponibles');
   }
 }
+
 
 
 }

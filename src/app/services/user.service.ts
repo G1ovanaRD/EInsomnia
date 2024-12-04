@@ -30,4 +30,18 @@ export class UserService {
       return this.http.delete(`${this.apiUrl}/${userId}/carrito/${productId}`);
     }
 
+
+        // Obtener los productos en la wishlist de un usuario
+    getWishList(userId: string): Observable<string[]> {
+      return this.http.get<string[]>(`${this.apiUrl}/${userId}/wishlist`);
+    }
+
+    // Eliminar de wishlist
+    removeFromWishList(userId: string, productId: string): Observable<any> {
+      return this.http.delete(`${this.apiUrl}/${userId}/wishlist/${productId}`);
+    }
+
+    deleteFromCart(userId: string, productId: string): Observable<any> {
+      return this.http.delete(`${this.apiUrl}/${userId}/carrito`, { body: { productId } });
+    }
 }

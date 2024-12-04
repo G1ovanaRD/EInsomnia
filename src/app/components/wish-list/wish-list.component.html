@@ -1,4 +1,9 @@
 <div class="reco-container">
     <h2>Wishlist</h2>
-    <app-wish *ngFor="let product of products"[product]="product"></app-wish>
+    <app-wish 
+        *ngFor="let product of products"
+        [product]="product"
+        (eliminarProducto)="eliminarDeWishlist($event)"
+        (moverACarrito)="moverACarrito($event)">
+    </app-wish>
 </div>

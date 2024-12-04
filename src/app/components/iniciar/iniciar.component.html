@@ -1,15 +1,16 @@
 <div class="forms">
-    <form #form="ngForm"  class="row g-3">
+    <form #form="ngForm"  class="row g-3" (ngSubmit)="onSubmit()">
     <h1>Iniciar Sesión</h1>
       <div>
-        <input type="text" name="username" required class="form-control" placeholder="Username">
+        <input type="text" name="username" required class="form-control" placeholder="Username" [(ngModel)]="username" required>
       </div>
       <div>
-        <input type="password" name="password" required class="form-control" placeholder="Contraseña">
+        <input type="password" name="password" required class="form-control" placeholder="Contraseña" [(ngModel)]="password" required>
       </div>
   
       <div class="ini">
         <button type="submit">Iniciar sesión</button>
+        <p style="color: red;">{{ errorMessage }}</p>
         <a href="#" [routerLink]="['/registrar']">Registrarte</a>
       </div>
       

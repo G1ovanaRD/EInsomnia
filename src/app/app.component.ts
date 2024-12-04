@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 import { NgIf, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AuthService } from './services/auth.service';
 
 
 
@@ -30,6 +31,7 @@ export class AppComponent {
 
   constructor(
     public productoService: ProductoService,
+    public authService: AuthService,
     private router: Router
   ) {}
 

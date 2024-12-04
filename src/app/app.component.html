@@ -5,7 +5,17 @@
     <a href="#" (click)="onSearch($event)">
       <img style="width: 30px; height: 30px; margin-top: 40px;" src="https://cdn-icons-png.flaticon.com/512/107/107122.png">
     </a>
-    <button [routerLink]="['/cuenta']" routerLinkActive="menu-item-selected">Iniciar sesion</button>
+    
+    <!-- Authentication buttons -->
+    <ng-container *ngIf="!(authService.user$ | async); else loggedIn">
+      <button [routerLink]="['/iniciar']" routerLinkActive="menu-item-selected">Iniciar sesion</button>
+    </ng-container>
+    
+    <ng-template #loggedIn>
+      <button [routerLink]="['/cuenta']">{{ (authService.user$ | async)?.username }}</button>
+      <button (click)="authService.logout()">Cerrar sesión</button>
+    </ng-template>
+    
     <button [routerLink]="['/car-list']">Mi carrito</button>
   </div>
   <div class="menu">

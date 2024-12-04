@@ -50,7 +50,8 @@ export class ProductoService {
 
  // Obtiene todos los productos
  fetchProducts() {
-  this.http.get<Product[]>(this.apiUrl).subscribe({
+  this.http.get<Product[]>(this.apiUrl  ).subscribe({
+
     next: (response) => {
       this._products = response;
       this._filteredProducts = response; // Inicializamos los productos filtrados con todos los productos

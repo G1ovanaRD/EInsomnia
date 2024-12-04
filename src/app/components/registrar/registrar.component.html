@@ -2,14 +2,15 @@
     <form #form="ngForm"  class="row g-3">
     <h1>Registrate</h1>
       <div>
-        <input type="text" name="username" required class="form-control" placeholder="Elige un nombre de usuario">
+        <input type="text" name="username" required class="form-control" placeholder="Elige un nombre de usuario" [(ngModel)]="newUsername" required>
       </div>
       <div>
-        <input type="password" name="password" required class="form-control" placeholder="Elige una contraseña">
+        <input type="password" name="password" required class="form-control" placeholder="Elige una contraseña" [(ngModel)]="newPassword" required>
       </div>
   
       <div class="ini">
-        <button type="submit" [routerLink]="['']">Registrar</button>
+        <button type="submit" (click)="onRegister()"  >Registrar</button>
+        <p style="color: red;">{{ registrationError }}</p>
       </div>
       
       <div *ngIf="form.submitted && !form.valid" class="alert alert-danger" role="alert">

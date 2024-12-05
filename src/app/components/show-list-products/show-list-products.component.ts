@@ -3,13 +3,13 @@ import { ListProductComponent } from "../list-product/list-product.component";
 import { ProductFormComponent } from "../product-form/product-form.component";
 import { Product } from '../interface/producto.interface';
 import { ProductoService } from '../../services/producto.service';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { ActivatedRoute, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-show-list-products',
   standalone: true,
-  imports: [ListProductComponent, ProductFormComponent,NgFor],
+  imports: [ListProductComponent, ProductFormComponent,NgFor, NgIf],
   templateUrl: './show-list-products.component.html',
   styleUrl: './show-list-products.component.css'
 })
@@ -17,11 +17,17 @@ export class ShowListProductsComponent {
   private productService=inject(ProductoService);
   private route=inject(ActivatedRoute);
 
+  userRole: string | null = null;
   ifFormSubmitted:boolean=false;  
   tipoProducto: string = '';
   marca:string='';
 
 
+
+
+  public isAdmin(): boolean {
+    return this.userRole === 'admin'; 
+  }
 
   constructor() {
     // this.form = new FormGroup({
@@ -77,6 +83,8 @@ ngOnInit(): void {
   this.route.paramMap.subscribe(params => {
     this.tipoProducto = params.get('tipo') || ''; 
     this.marca = params.get('marca') || '';
+    this.userRole = localStorage.getItem('role');
+    console.log(this.userRole);
   });
 }
 

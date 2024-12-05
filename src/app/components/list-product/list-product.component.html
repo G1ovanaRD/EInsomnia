@@ -11,10 +11,16 @@
           <div class="stars" [style]="{ '--rating': product.rating.rate }"></div>
           <pre><b>({{ product.rating.rate }})</b></pre>
         </div>
-        <div class="buttons">
-          <button (click)="onEditCard()">Editar</button>
-          <button (click)="onDeleteCard()">X</button>
-        </div>
+
+        <ng-container *ngIf="!isAdmin(); else userView">
+        </ng-container>
+        
+        <ng-template #userView>
+          <div class="buttons">
+            <button (click)="onEditCard()">Editar</button>
+            <button (click)="onDeleteCard()">X</button>
+          </div>
+        </ng-template>
       </div>
     </div>
 </div>

@@ -14,9 +14,10 @@
     <ng-template #loggedIn>
       <button [routerLink]="['/cuenta']">{{ (authService.user$ | async)?.username }}</button>
       <button (click)="authService.logout()">Cerrar sesión</button>
+      <button [routerLink]="['/car-list']">Mi carrito</button>
     </ng-template>
     
-    <button [routerLink]="['/car-list']">Mi carrito</button>
+    
   </div>
   <div class="menu">
     <!-- Menú de Dispositivo Inteligente -->

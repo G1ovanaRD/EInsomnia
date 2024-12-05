@@ -2,11 +2,13 @@ import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/
 import { FormsModule, NgForm } from '@angular/forms';
 import { Product } from '../interface/producto.interface';
 import { NgIf } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-form',
   standalone: true,
-  imports: [FormsModule,NgIf],
+  imports: [FormsModule,NgIf, CommonModule],
   templateUrl: './product-form.component.html',
   styleUrl: './product-form.component.css'
 })
@@ -15,7 +17,21 @@ export class ProductFormComponent {
   @Output() public updateElement: EventEmitter<Product> = new EventEmitter();
   @Input() public product?: Product;
   @Input() public isEdit: boolean = false;
+  userRole: string | null = null;
 
+
+  constructor( public authService: AuthService){};
+
+  ngOnInit(): void {
+
+    this.userRole = localStorage.getItem('role');
+    console.log(this.userRole);
+
+  }
+
+  public isAdmin(): boolean {
+    return this.userRole === 'admin'; 
+  }
   
   public onFormSubmit(form: NgForm): void {
     if (form.valid) {

@@ -10,5 +10,14 @@ import { RouterLinkActive } from '@angular/router';
   styleUrl: './cuenta.component.css'
 })
 export class CuentaComponent {
+  public userId: string | null = null;
+  public username: string | null = null;
+
+  ngOnInit(): void {
+    this.userId = localStorage.getItem('id');
+    this.username = localStorage.getItem('username');
+    
+    }
+
 
 }

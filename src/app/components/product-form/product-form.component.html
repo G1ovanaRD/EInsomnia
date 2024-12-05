@@ -1,44 +1,50 @@
-<div class="forms">
-  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)" class="row g-3">
-    <div>
-      <input type="text" name="name" required class="form-control" placeholder="Nombre" ngModel [ngModel]="product?.title">
-    </div>
-    <div>
-      <textarea name="description" required class="form-control" placeholder="Descripción" ngModel [ngModel]="product?.description"></textarea>
-    </div>
-    <div>
-      <textarea type="text" name="image" required class="form-control" placeholder="Imagen" ngModel [ngModel]="product?.image"></textarea>
-    </div>
-    <div>
-      <input type="text" name="type" required class="form-control" placeholder="Tipo" ngModel [ngModel]="product?.type">
-    </div>
+<ng-container *ngIf="!isAdmin(); else userView">
+</ng-container>
 
-    <div>
-      <input type="text" name="price" required class="form-control" placeholder="Precio" ngModel [ngModel]="product?.price">
-    </div>
+<ng-template #userView>
+  <div class="forms">
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)" class="row g-3">
+      <div>
+        <input type="text" name="name" required class="form-control" placeholder="Nombre" ngModel [ngModel]="product?.title">
+      </div>
+      <div>
+        <textarea name="description" required class="form-control" placeholder="Descripción" ngModel [ngModel]="product?.description"></textarea>
+      </div>
+      <div>
+        <textarea type="text" name="image" required class="form-control" placeholder="Imagen" ngModel [ngModel]="product?.image"></textarea>
+      </div>
+      <div>
+        <input type="text" name="type" required class="form-control" placeholder="Tipo" ngModel [ngModel]="product?.type">
+      </div>
+  
+      <div>
+        <input type="text" name="price" required class="form-control" placeholder="Precio" ngModel [ngModel]="product?.price">
+      </div>
+  
+      <div>
+        <input type="text" name="category" required class="form-control" placeholder="Categoria" ngModel [ngModel]="product?.category">
+      </div>
+  
+      <div>
+        <input type="text" name="marca" required class="form-control" placeholder="Marca" ngModel [ngModel]="product?.marca">
+      </div>
+      <p>Rating</p>
+      <div>
+        <input type="number" name="rate" required class="form-control" placeholder="Rate" ngModel [ngModel]="product?.rating?.rate">
+      </div>
+  
+      <div>
+        <input type="count" name="count" required class="form-control" placeholder="Count" ngModel [ngModel]="product?.rating?.count">
+      </div>
+  
+      <div>
+        <button type="submit" class="btn btn-primary mb-3">{{ isEdit ? 'Actualizar' : 'Agregar' }}</button>
+      </div>
+      
+      <div *ngIf="form.submitted && !form.valid" class="alert alert-danger" role="alert">
+        Datos incompletos
+      </div>
+    </form>
+  </div>
+</ng-template>
 
-    <div>
-      <input type="text" name="category" required class="form-control" placeholder="Categoria" ngModel [ngModel]="product?.category">
-    </div>
-
-    <div>
-      <input type="text" name="marca" required class="form-control" placeholder="Marca" ngModel [ngModel]="product?.marca">
-    </div>
-    <p>Rating</p>
-    <div>
-      <input type="number" name="rate" required class="form-control" placeholder="Rate" ngModel [ngModel]="product?.rating?.rate">
-    </div>
-
-    <div>
-      <input type="count" name="count" required class="form-control" placeholder="Count" ngModel [ngModel]="product?.rating?.count">
-    </div>
-
-    <div>
-      <button type="submit" class="btn btn-primary mb-3">{{ isEdit ? 'Actualizar' : 'Agregar' }}</button>
-    </div>
-    
-    <div *ngIf="form.submitted && !form.valid" class="alert alert-danger" role="alert">
-      Datos incompletos
-    </div>
-  </form>
-</div>

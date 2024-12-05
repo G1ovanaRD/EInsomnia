@@ -24,10 +24,13 @@ export class PrincipalComponent implements OnInit {
   ngOnInit(): void {
     // Filtra los productos con los IDs que deseas mostrar
     this.popu = this.productService.products.filter(product =>
-      ["2", "3", "4","6"].includes(product._id)
+      ["674d065e6e587abe76ad2798", "6750dac162cd552eea230490", "674d065e6e587abe76ad279f","674d065e6e587abe76ad279a"].includes(product._id)
     );
     
-    this.trend=this.productService.products.filter(product=>["LG","Mabe","HP"].includes(product.marca));
+    const marcas = ["LG", "Mabe", "HP"];
+    this.trend = marcas.map(marca =>
+      this.productService.products.find(product => product.marca === marca)
+    ).filter(product => product !== undefined) as Product[];
   }
 
   public get products(): Product[]{

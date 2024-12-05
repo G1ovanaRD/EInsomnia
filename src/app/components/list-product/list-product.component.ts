@@ -7,6 +7,7 @@ import { Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ProductFormComponent } from '../product-form/product-form.component';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-list-product',
@@ -17,6 +18,8 @@ import { ProductFormComponent } from '../product-form/product-form.component';
 })
 
 export class ListProductComponent{
+  userRole: string | null = null;
+
      //compoentne hijo envia informacion al componente padre
      @Output() //deleteCard emisor informacion, <que tipo de evento se va a comnicar ne el evento>
      public deleteCard: EventEmitter<string>=new EventEmitter();
@@ -44,9 +47,21 @@ export class ListProductComponent{
       }
   }
 
+  ngOnInit(): void {
+
+    this.userRole = localStorage.getItem('role');
+    console.log(this.userRole);
+
+  }
+
+  public isAdmin(): boolean {
+    return this.userRole === 'admin'; 
+  }
+
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductoService
+    private productService: ProductoService,
+    public authService: AuthService,
   ) {}
 
 

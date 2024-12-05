@@ -20,8 +20,10 @@ export class WishListComponent implements OnInit {
   public products: Product[] = []; // Lista de productos en wishlist
   public userId: string | null = null;
 
+
   ngOnInit(): void {
     this.userId = localStorage.getItem('id');
+    
     
     if (this.userId) {
       this.userService.getWishList(this.userId).subscribe({

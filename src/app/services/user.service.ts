@@ -39,4 +39,8 @@ export class UserService {
     deleteFromCart(userId: string, productId: string): Observable<any> {
       return this.http.delete(`${this.apiUrl}/${userId}/carrito`, { body: { productId } });
     }
+
+    deleteFromWishList(userId: string, productId: string): Observable<any> {
+      return this.http.delete(`${this.apiUrl}/${userId}/wishlist`, { body: { productId } });
+    }
 }

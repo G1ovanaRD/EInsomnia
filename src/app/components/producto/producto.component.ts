@@ -6,6 +6,7 @@ import { CommonModule, NgFor } from '@angular/common';
 import { Subscription } from 'rxjs';  
 import { UserService } from '../../services/user.service';
 import { User } from '../interface/user.interface';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-producto',
@@ -23,11 +24,17 @@ export class ProductoComponent implements OnInit {
   userRole: string | null = null;
   
   
+  public isAdmin(): boolean {
+    return this.userRole === 'admin'; 
+  }
 
+  
   constructor(
     private route: ActivatedRoute,
     private productService: ProductoService,
-    private userService: UserService
+    private userService: UserService,
+    public authService: AuthService,
+
   ) {}
 
 @Output()

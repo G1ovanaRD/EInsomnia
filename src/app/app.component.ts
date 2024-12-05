@@ -37,6 +37,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.productoService.fetchProducts(); // Recargar todos los productos
+    localStorage.clear();
   }
 
   onSearch(event: Event): void {

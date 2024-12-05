@@ -3,7 +3,12 @@
   <app-list-product *ngFor="let producto of products" [product]="producto" class="product-card card-popu" (deleteCard)="deleteElement($event)" (editCard)="selectShowForEdit($event)"></app-list-product>
 </div>
   <div>
-      <h2>Producto</h2>
+    <ng-container *ngIf="!isAdmin(); else userView">
+    </ng-container>
+    
+    <ng-template #userView>
+        <h2>Producto</h2>
+    </ng-template>
       <app-product-form
         (createElement)="createElement($event)"
         (updateElement)="updateElement($event)"

@@ -9,8 +9,8 @@
             <p>Precio: {{product.price | currency}}</p>
         </div> 
         <div class="botones">
-            <button (click)="onMoverACarrito(); $event.stopPropagation()">Mover al Carrito</button>
-            <button (click)="onEliminarProducto(); $event.stopPropagation()">Quitar</button>
+            <button (click)="addToCart()" (click)="deleteFromWishList()" >Mover al Carrito</button>
+            <button (click)="deleteFromWishList()">Quitar</button>
         </div>  
     </div>
 </div>
